@@ -1,0 +1,18 @@
+<Button Content="¶¯»­°´Å¥" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Name="button_inh" VerticalAlignment="Stretch" Padding="0" Margin="5" RenderTransform="{Binding Source={StaticResource MyBrush}, Path=Opacity}">
+            <Button.Background>
+                <SolidColorBrush x:Name="AnimBrush"/>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="AnimBrush" 
+                                            Storyboard.TargetProperty="(SolidColorBrush.Color)"
+                                            From="Red" To="Green" Duration="0:0:5"
+                                            AutoReverse="True" RepeatBehavior="Forever">
+                            </ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>

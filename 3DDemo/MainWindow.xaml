@@ -1,0 +1,13 @@
+﻿<Window x:Class="_3DDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <TabControl>
+        <TabItem Header="2D示例">
+            <Frame Source="HouseUsing2DDrawing.xaml"></Frame>
+        </TabItem>
+        <TabItem Header="3D示例">
+            <Frame Source="HouseUsing3DDrawing.xaml"></Frame>
+        </TabItem>
+    </TabControl>
+</Window>

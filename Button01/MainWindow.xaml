@@ -1,0 +1,47 @@
+﻿<Window x:Class="Button01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="依赖属性演示" Height="417" Width="772" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label Content="资源支持" Name="label_src" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Label Content="动画支持" Grid.Row="1" Name="label_ani" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Label Content="属性继承支持" Grid.Row="2" HorizontalAlignment="Center" Name="label_prop" VerticalAlignment="Center" />
+        <Label Content="样式支持" Grid.Column="2" Name="label_style" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Label Content="数据绑定支持" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Name="label_data" VerticalAlignment="Center" />
+        <Button Content="金色按钮" Grid.Column="1" Name="button_gold" Margin="5" Padding="0" Background="{StaticResource MyBrush}" />
+        <Button Content="动画按钮" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Name="button_inh" VerticalAlignment="Stretch" Padding="0" Margin="5">
+            <Button.Background>
+                <SolidColorBrush x:Name="AnimBrush"/>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="AnimBrush" 
+                                            Storyboard.TargetProperty="(SolidColorBrush.Color)"
+                                            From="Red" To="Green" Duration="0:0:5"
+                                            AutoReverse="True" RepeatBehavior="Forever">
+                            </ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Content="设置窗口字体：16" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Name="button_winFont" VerticalAlignment="Stretch" Padding="0" Margin="5" />
+        <Button Content="设置按钮字体：8" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Stretch" Name="button_btnFont" VerticalAlignment="Stretch" Padding="0" Margin="5" />
+        <Button Content="红色按钮" Grid.Column="3" Name="button_blue" Padding="0" Margin="5" />
+        <Button Content="我被绑定成红色" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Stretch" Name="button_red" VerticalAlignment="Stretch" Padding="0" Margin="5" />
+        <Button Content="重置字体：12" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Stretch" Name="button_resetFont" VerticalAlignment="Stretch" Padding="0" Margin="5" />
+    </Grid>
+</Window>

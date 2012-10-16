@@ -1,0 +1,8 @@
+﻿<Window x:Class="RadioButton_RGB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <RadioButton Height="19" HorizontalAlignment="Left" Margin="143,109,0,0" Name="radioButton1" VerticalAlignment="Top" Width="17" IsChecked="False" Foreground="#FFAA1A1A" BorderBrush="#FFCB2424" Background="#FFF4F4F6" FontStretch="ExtraCondensed" FontSize="10" />
+    </Grid>
+</Window>
